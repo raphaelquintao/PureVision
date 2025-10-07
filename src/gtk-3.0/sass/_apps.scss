@@ -1,0 +1,41 @@
+popover.emoji-picker {
+  padding: 0px;
+
+  .search {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    background-color: transparent;
+    min-height: 25px;
+  }
+
+  button {
+    margin: 3px;
+    min-width: 25px;
+    min-height: 25px;
+
+    &:active, &:checked {
+      @include button(osd-hover);
+    }
+  }
+
+}
+
+popover {
+  .emoji {
+    &, label {
+      font-size: 25px;
+    }
+
+    widget {
+      &:hover {
+        @extend %view, :hover;
+      }
+
+      &:selected {
+        @extend %view, :selected;
+      }
+    }
+  }
+}

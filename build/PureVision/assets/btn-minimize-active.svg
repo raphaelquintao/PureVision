@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   id="svg9892"
+   version="1.1"
+   fill="#ff0000"
+   style="color:#b2b9bf"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs9894">
+    <linearGradient
+       id="preview_bg"
+       gradientTransform="matrix(2.0661157,0,0,1.3333334,-483.4711,-380.85039)">
+      <stop
+         style="stop-color:#7b3c55;stop-opacity:1;"
+         offset="0"
+         id="stop2599" />
+    </linearGradient>
+    <linearGradient
+       id="selected_fg_color"
+       gradientTransform="translate(-150.36772,28.215453)">
+      <stop
+         offset="0"
+         id="stop6555"
+         style="stop-color:#2b3136;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       id="selected_bg_color"
+       gradientTransform="matrix(0,-0.83350009,0.83350009,0,103.35651,-5.5580946)">
+      <stop
+         offset="0"
+         id="stop5956"
+         style="stop-color:currentColor;stop-opacity:1;" />
+    </linearGradient>
+  </defs>
+  <metadata
+     id="metadata9897">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer4"
+     style="display:inline"
+     transform="translate(-245,-134.99998)">
+    <g
+       style="display:inline"
+       id="btn-minimize-active"
+       transform="translate(-138,320.6378)">
+      <circle
+         r="7"
+         cy="-177.6378"
+         cx="391"
+         style="opacity:0.9;fill:url(#selected_bg_color);fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="btn-minimize-active-border" />
+      <path
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:url(#selected_fg_color);fill-opacity:1;stroke:none;stroke-width:2;marker:none;enable-background:accumulate"
+         id="btn-minimize-active-icon"
+         d="m 388,-178.6378 v 2 h 6 v -2 z" />
+      <rect
+         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0"
+         id="rect17883-79-9-2-2"
+         width="16"
+         height="16"
+         x="383"
+         y="-185.63782" />
+    </g>
+  </g>
+</svg>

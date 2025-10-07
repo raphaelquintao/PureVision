@@ -1,0 +1,1019 @@
+
+//
+// Cinnamon Specific Section
+//
+
+@mixin penis {
+  background: red;
+  background-color: darken($panel_bg, 8%);
+}
+
+/*region Menu (menu.js) */
+$inner-menu-bg: darken($panel_bg, 5%);
+$menu-button-hover-bg-color: shade($button_bg, 0.5);
+.menu {
+  padding: 0px 0px;
+
+  &-background {
+    //padding: 0;
+    //margin: 0;
+    //background-color: $panel_bg;
+  }
+
+  &-favorites-box {
+    margin: 0;
+    padding: 2px;
+    transition-duration: 300;
+    background-color: darken($panel_bg, 1%);
+    border: 1px solid $borders_color;
+  }
+
+  &-favorites-button {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0);
+
+
+    //@include button(hover);
+
+    &:hover {
+      @extend %button, :hover;
+      padding: 10px;
+      border-color: $button_border;
+      background-color: $menu-button-hover-bg-color;
+    }
+  }
+
+  &-places {
+
+    &-box {
+      //margin: auto;
+      padding: 10px;
+      border: 0px solid $insensitive_fg_color;
+    }
+
+    &-button {
+      padding: 10px;
+    }
+  }
+
+  &-categories-box {
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    //background-color: red;
+  }
+
+  &-applications {
+    &-inner-box {
+      padding-top: 10px;
+      padding-right: 10px;
+      padding-left: 10px;
+      padding-bottom: 0;
+      //background-color: $inner-menu-bg;
+      //margin: auto;
+      //float: left;
+
+    }
+
+    &-outer-box {
+      padding: 0 10px ;
+      //background-color: black;
+      //padding: 0;
+      //margin: auto;
+      //overflow: hidden;
+      //width: 250px;
+
+    }
+  }
+
+
+  &-application-button {
+    padding: 7px;
+    border: 1px solid rgba(0, 0, 0, 0);
+
+    // This style is used in menu application buttons for applications which were newly installed
+    &:highlighted {
+      font-weight: bold;
+    }
+
+    &-selected {
+      padding: 7px;
+      @extend %button, :hover;
+      background-color: $menu-button-hover-bg-color;
+
+      &:highlighted {
+        font-weight: bold;
+      }
+    }
+
+    &-label:ltr {
+      padding-left: 5px;
+    }
+
+    &-label:rtl {
+      padding-right: 5px;
+    }
+  }
+
+  &-category-button {
+    padding: 7px;
+    border: 0px solid rgba(0, 0, 0, 0);
+
+    &-selected {
+      //@extend %button;
+      padding: 7px;
+      border-radius: 2px 0px 0px 2px;
+      border-color: $button_border;
+      background-color: $menu-button-hover-bg-color;
+
+      &:hover {
+        //background-color: pink;
+        //border-radius: 2px;
+        //@extend %button, :hover;
+      }
+    }
+
+
+    &-greyed {
+      padding: 7px;
+      color: $insensitive_fg_color;
+      border: 1px solid rgba(0, 0, 0, 0);
+    }
+
+    &-label:ltr {
+      padding-left: 5px;
+    }
+
+    &-label:rtl {
+      padding-right: 5px;
+    }
+  }
+
+  // Name and description of the currently hovered item in the menu
+  // This appears on the bottom right hand corner of the menu
+  &-selected-app-box {
+    padding-right: 30px;
+    padding-left: 28px;
+    text-align: right;
+    height: 30px;
+
+    &:rtl {
+      padding-top: 10px;
+      height: 30px;
+    }
+  }
+
+  &-selected-app-title {
+    font-weight: bold;
+  }
+
+  &-selected-app-description {
+    max-width: 150px;
+  }
+
+  &-systembuttons-box {
+    background-color: pink;
+  }
+
+  &-search-box:ltr {
+    padding-left: 30px;
+  }
+
+  &-search-box-rtl {
+    padding-right: 30px;
+  }
+
+}
+
+
+#menu-search-entry {
+  //width: 250px;
+  font-weight: normal;
+  caret-color: currentColor;
+
+  @extend %entry;
+}
+
+.menu-search-entry-icon {
+  icon-size: 1em;
+  color: currentColor;
+}
+
+/* Context menu (at the moment only for favorites) */
+.menu-context-menu {
+  background-color: black;
+}
+
+/*endregion*/
+
+
+
+
+/*region OSD */
+.info-osd {
+  text-align: center;
+  font-weight: bold;
+  spacing: 1em;
+  padding: 16px;
+  //@extend %def_win;
+}
+
+.osd-window {
+  text-align: center;
+  font-weight: bold;
+  spacing: 1em;
+  padding: 20px;
+  //margin: 132px;
+  min-width: 64px;
+  min-height: 64px;
+  @include osd_win(false);
+
+  .osd-monitor-label {
+    font-size: 3em;
+  }
+
+  .level {
+    padding: 0;
+    height: 8px;
+    background-color: transparentize($osd_fg_color, 0.7);
+    border-radius: 4px;
+  }
+
+  .level-bar {
+    background-color: $osd_fg_color;
+    border-radius: 4px;
+  }
+}
+
+/*endregion*/
+
+
+/*region Window list (windowList.js) */
+.window-list {
+
+  &-box {
+    spacing: 0px;
+    padding-left: 10px;
+
+    .panel-bottom & {
+      padding-top: 1px;
+    }
+
+    .panel-top & {
+      padding-bottom: 1px;
+    }
+
+    &.vertical {
+      spacing: 3px;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    &:highlight {
+      background-color: transparentize($error_color, 0.5);
+    }
+  }
+
+  &-item-label {
+    width: 15em;
+    min-width: 5px;
+  }
+
+  &-item-box {
+    padding-top: 0px;
+    padding-left: 8px;
+
+    padding-right: 8px;
+    transition-duration: 100ms;
+    //color: transparentize($fg_color, 0.4);
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255, 255, 255, 0.00);
+    background-gradient-end: rgba(255, 255, 255, 0.0);
+    //box-shadow: inset 0px 0px 1px 1px rgba(170, 170, 170, 0.5);
+    //spacing: 0.5em;
+    font-weight: 500;
+
+    &:hover {
+      color: $selected_fg_color;
+      background-gradient-start: $selected_bg_color;
+      background-gradient-end: $selected_bg_color;
+      //box-shadow: inset 0px 0px 1px 1px rgba(170, 170, 170, 1.0);
+    }
+
+    &:active,
+    &:checked,
+    &:focus {
+      color: $selected_fg_color;
+      //background-color: rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 1px 35px 0 rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        background-gradient-start: rgba(255, 255, 255, 0.00);
+        background-gradient-end: rgba(255, 255, 255, 0.00);
+      }
+
+      .panel-bottom & {
+        //border-image: url("common-assets/panel/window-list-active-bottom.svg") 3 3 1 3;
+      }
+
+      .panel-top & {
+        //border-image: url("common-assets/panel/window-list-active-top.svg") 3 3 3 1;
+      }
+
+      .panel-left & {
+        //border-image: url("common-assets/panel/window-list-active-left.svg") 3 1 3 3;
+      }
+
+      .panel-right & {
+        //border-image: url("common-assets/panel/window-list-active-right.svg") 1 3 3 3;
+      }
+    }
+
+    //&:outlined {
+    //  //background-image: none;
+    //  //border-image: none;
+    //  background-color: transparentize($error_color, 0.5);
+    //}
+
+    &.right, &.left {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+
+  &-item-demands-attention {
+    background-gradient-start: $warning_color;
+    background-gradient-end: $warning_color;
+  }
+}
+
+/*endregion*/
+
+
+/*region Grouped Window list (grouped-window-list@cinnamon.org) */
+//
+
+.grouped-window-list {
+
+  &-thumbnail-label {
+    padding-left: 4px;
+  }
+
+  &-number-label {
+    z-index: 99;
+    text-shadow: black 1px 0px 2px;
+    font-size: 0.9em;
+    color: #fff;
+    padding: 0;
+  }
+
+  &-badge {
+    border-radius: 256px;
+    background-color: #000000;
+  }
+
+  &-button-label {
+    padding-left: 4px;
+  }
+
+  &-thumbnail-alert {
+    background: rgba(255, 52, 52, 0.3);
+  }
+
+  &-item-box {
+    //color: rgba(255, 255, 255, 1.0);
+    background-image: none;
+    background-color: blue;
+    background-gradient: none;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255, 255, 255, 0.0);
+    background-gradient-end: rgba(255, 255, 255, 0.0);
+    //box-shadow: inset 0px 0px 1px 1px rgba(170, 170, 170, 0);
+    border-radius: 0px;
+    transition-duration: 100;
+    spacing: 0.5em;
+
+    //border: 0px solid rgba(255, 255, 255, 0.0);
+    border-width: 0px;
+    border-color: rgba(255, 255, 255, 0.0);
+
+  }
+
+  &-item-box.top {
+    border-radius: 0px 0px 2px 2px;
+    border-top-width: 1px;
+  }
+
+  &-item-box.bottom {
+    //padding: 0 0.5em;
+    border-bottom-width: 1px;
+  }
+
+  &-item-box.left {
+    border-radius: 0px 2px 2px 0px;
+    //border-left: 1px solid red;
+    border-left-width: 1px;
+  }
+
+  &-item-box.right {
+    border-radius: 2px 0px 0px 2px;
+    border-right-width: 1px;
+  }
+
+
+  &-item-box:checked,
+  &-item-box:active:hover {
+    //background-gradient-direction: vertical;
+    //background-gradient-start: rgba(226, 226, 226, 0.5);
+    //background-gradient-end: rgba(122, 122, 122, 0.5);
+    //box-shadow: inset 0px 0px 1px 1px rgba(170, 170, 170, 0.8);
+  }
+
+  &-item-box:focus {
+    //background-gradient-direction: vertical;
+    //background-gradient-start: rgba(226, 226, 226, 0.5);
+    //background-gradient-end: rgba(122, 122, 122, 0.3);
+    //box-shadow: inset 0px 0px 1px 1px rgba(170, 170, 170, 0.9);
+  }
+
+  &-item-box:active:focus:hover,
+  &-item-box:focus:hover {
+    //background-gradient-direction: vertical;
+    //background-gradient-start: rgba(226, 226, 226, 0.3);
+    //background-gradient-end: rgba(122, 122, 122, 0.3);
+    //box-shadow: inset 0px 0px 1px 1px rgba(170, 170, 170, 1.0);
+  }
+
+  &-item-box:hover {
+    color: $selected_fg_color;
+    background-gradient-start: $selected_bg_color;
+    background-gradient-end: $selected_bg_color;
+  }
+
+  &-item-box:focus {
+    //box-shadow: inset 0px 0px 1px 1px rgba(170, 170, 170, 0.3);
+    //color: red;
+    box-shadow: inset 0 1px 90px 0 rgba(0, 0, 0, 0.5);
+    //background-gradient-start: mix($selected_bg_color, black, 0.5);
+    //background-gradient-end: mix($selected_bg_color, black, 0.5);
+  }
+
+  &-item-box:active {
+    //box-shadow: inset 0px 0px 1px 1px rgba(170, 170, 170, 0.3);
+    //box-shadow: inset 0 1px 90px 0 rgba(0, 0, 0, 0.5);
+    //color: red;
+    border-color: $panel_fg_selected;
+  }
+
+  &-item-demands-attention {
+    background-gradient-start: rgba(255, 52, 52, 0.5);
+    background-gradient-end: rgba(255, 144, 144, 0.5);
+  }
+
+  &-item-box .progress {
+    //background-gradient-direction: vertical;
+    background-gradient-start: rgba(138, 63, 100, 0.6);
+    background-gradient-end: rgba(138, 63, 100, 0.3);
+    //border-radius: 2px 2px 0px 0px;
+    //box-shadow: inset 0px 0px 1px 1px rgba(170, 170, 170, 0.5);
+  }
+}
+
+
+
+
+.panel-top .grouped-window-list-item-box .progress {
+  //border-radius: 0px 0px 2px 2px;
+}
+
+.panel-left .grouped-window-list-item-box .progress {
+  //border-radius: 0px 2px 2px 0px;
+}
+
+.panel-right .grouped-window-list-item-box .progress {
+  //border-radius: 2px 0px 0px 2px;
+}
+
+.grouped-window-list-thumbnail-menu {
+  background: $panel_bg;
+  border: 1px solid $hl_border_color;
+}
+
+.grouped-window-list-thumbnail-menu .item-box {
+  padding: 10px;
+  border-radius: 0px;
+  spacing: 4px;
+}
+
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+  padding: 6px;
+  border: 1px solid $hl_border_color;
+}
+
+.grouped-window-list-thumbnail-menu .item-box:selected {
+  background: $panel_bg_selected;
+  border: 1px solid $hl_border_color;
+}
+
+.grouped-window-list-thumbnail-menu .thumbnail {
+  width: 256px;
+}
+
+.grouped-window-list-thumbnail-menu .separator {
+  width: 1px;
+  background: $hl_border_color;
+}
+
+/*endregion*/
+
+
+// region Sound Applet (status/volume.js)
+//
+.sound-button {
+  width: 22px;
+  height: 13px;
+  padding: 8px;
+
+  //@extend %button;
+
+  &-container {
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+
+  StIcon {
+    icon-size: 1.4em;
+  }
+}
+
+.sound-track {
+  &-infos {
+    padding: 5px;
+  }
+
+  &-info {
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    StIcon {
+      icon-size: 16px;
+    }
+
+    StLabel {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  &-box {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 220px;
+  }
+}
+
+.sound-seek-box {
+  padding-left: 15px;
+
+  StLabel {
+    padding-top: 2px;
+  }
+
+  StIcon {
+    icon-size: 16px;
+  }
+}
+
+.sound-seek-slider {
+  width: 140px;
+}
+
+.sound-volume-menu-item {
+  padding: .4em 1.75em;
+
+  StIcon {
+    icon-size: 1.14em;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.sound-playback-control {
+  padding: 5px 10px 10px 10px;
+}
+
+// 2.8
+.sound-player {
+  padding: 0 4px;
+
+  > StBoxLayout:first-child {
+    padding: 5px 10px 12px 10px;
+    spacing: 0.5em;
+
+    StButton:small {
+      width: 16px;
+      height: 16px;
+      padding: 1px;
+
+      StIcon {
+        icon-size: 12px;
+      }
+    }
+  }
+
+  &-generic-coverart {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  &-overlay {
+    width: 290px;
+    height: 70px;
+    padding: 15px;
+    spacing: 0.5em;
+    background: transparentize(darken($osd_bg_color, 5%), 0.1);
+    border: 0px solid darken($osd_bg_color, 10%);
+    border-bottom: 1px;
+    color: $osd_fg_color;
+
+    StButton {
+      width: 22px;
+      height: 13px;
+      padding: 5px;
+      color: $osd_fg_color;
+      border-radius: 2px;
+      border: 1px solid transparentize($osd_bg_color, 1);
+
+      StIcon {
+        icon-size: 16px;
+      }
+
+      &:hover {
+        @include button(osd-hover);
+      }
+
+      &:active {
+        @include button(active);
+      }
+    }
+
+    StBoxLayout {
+      padding-top: 2px;
+    }
+  }
+
+  .slider {
+    //height: 0.5em;
+    //padding: 0;
+    //border: none;
+    //-slider-height: 0.5em;
+    //-slider-background-color: if($variant == 'light', $button_border, darken($bg_color, 5%));
+    //-slider-border-color: rgba(0, 0, 0, 0);
+    //-slider-active-background-color: $selected_bg_color;
+    //-slider-active-border-color: rgba(0, 0, 0, 0);
+    //-slider-border-width: 0px;
+    //-slider-handle-radius: 0px;
+  }
+}
+
+/*endregion*/
+
+
+/*region Workspace Switcher applet (workspaceSwitcher.js) */
+//
+#workspaceSwitcher {
+  spacing: 0px;
+  padding: 3px;
+}
+
+/* Controls the styling when using the "Simple buttons" option */
+.workspace-switcher {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.workspace-button {
+  width: 20px;
+  height: 10px;
+  color: $selected_fg_color;
+  padding: 3px;
+  padding-top: 4px;
+  transition-duration: 300ms;
+
+  &:outlined, &:outlined:hover {
+    color: $selected_bg_color;
+  }
+
+  &:hover {
+    color: transparentize($selected_bg_color, 0.5)
+  }
+}
+
+/* Controls the style when using the "Visual representation" option */
+.workspace-graph {
+  padding: 3px;
+  spacing: 3px;
+}
+
+.workspace-graph .workspace {
+  border: 1px solid transparentize(black, 0.6);
+  background-gradient-direction: none;
+  background-color: transparentize(black, 0.8);
+}
+
+.workspace-graph .workspace:active {
+  border: 1px solid $selected_bg_color;
+  background-gradient-direction: none;
+}
+
+.workspace-graph .workspace .windows {
+  -active-window-background: lighten($panel_bg, 15%);
+  -active-window-border: rgba(0, 0, 0, 0.8);
+  -inactive-window-background: lighten($panel_bg, 15%);
+  -inactive-window-border: rgba(0, 0, 0, 0.8);
+}
+
+.workspace-graph .workspace:active .windows {
+  -active-window-background: lighten($panel_bg, 20%);
+  -active-window-border: rgba(0, 0, 0, 0.8);
+  -inactive-window-background: lighten($panel_bg, 5%);
+  -inactive-window-border: rgba(0, 0, 0, 0.8);
+}
+
+/*endregion*/
+
+
+/*region Panel Launchers Applet (panelLaunchers.js) */
+//.panel-launchers {
+//  spacing: 0;
+//  padding: 0px;
+//  margin: 0;
+//  //background-color: green;
+//
+//  .icon-box {
+//    margin: 0;
+//    spacing: 0;
+//    padding: 5px;
+//    //background-color: palevioletred;
+//  }
+//
+//  &.vertical {
+//    spacing: 0;
+//    padding: 0px 0;
+//  }
+//}
+
+.panel-launcher,
+.launcher {
+  spacing:0;
+  margin: 0px;
+  padding: 0px;
+  transition-duration: 200ms;
+  //background-color: red;
+
+  &:hover {
+    //color: $selected_fg_color;
+    //background-color: $selected_bg_color;
+
+    background-gradient-direction: none;
+    border: 0px solid $selected_bg_color;
+
+    .panel-bottom & {
+      border-bottom-width: 1px;
+    }
+
+    .panel-top & {
+      border-top-width: 1px;
+    }
+
+    .panel-left & {
+      border-left-width: 1px;
+      //padding-left: 0;
+    }
+
+    .panel-right & {
+      border-right-width: 1px;
+      //padding-right: 0;
+    }
+  }
+}
+
+/*endregion*/
+
+
+/*region Overview corner */
+//
+#overview-corner {
+  background-image: url("common-assets/misc/overview.png");
+
+  &:hover {
+    background-image: url("common-assets/misc/overview-hover.png");
+  }
+}
+
+/*endregion*/
+
+
+
+
+/*region Applets (applet.js) */
+.applet {
+  &-separator {
+    padding: 0;
+    //background-color: green;
+    width: 1px;
+    height: 1px;
+  }
+
+  &-separator-line {
+    //width: 1px;
+    margin: 5px 0;
+    border: 0px solid transparentize($panel_fg, 0.75);
+    border-left-width: 1px;
+  }
+
+  &-separator-line-vertical {
+    //height: 1px;
+    margin: 0px 5px;
+    border: 0px solid transparentize($panel_fg, 0.75);
+    border-top-width: 1px;
+  }
+
+  &-box {
+    padding: 0 5px;
+    margin: 0;
+    //color: $_shell_fg_color;
+    text-shadow: none;
+    transition-duration: 100ms;
+
+    &.vertical {
+      padding: 5px 0;
+      margin: 0;
+    }
+
+    &:hover, &:checked {
+      //color: $selected_fg_color;
+      background-color: $selected_bg_color;
+    }
+
+    &:highlight {
+      background-image: none;
+      border-image: none;
+      background-color: transparentize($error_color, 0.5);
+    }
+
+  }
+
+  &-label {
+    font-weight: bold;
+    //color: $_shell_fg_color;
+
+    &:hover, &:checked, .applet-box:hover > & {
+      //color: $selected_fg_color;
+      text-shadow: none;
+      text-shadow: 0.01em 0.01em 1px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &-icon {
+    //color: $_shell_fg_color;
+    icon-size: 22px;
+
+    &:hover, &:checked, .applet-box:hover > & {
+      color: $selected_fg_color;
+      text-shadow: none;
+      text-shadow: 0.01em 0.01em 1px rgba(0, 0, 0, 0.3);
+      //icon-shadow: $selected_fg_color 0px 0px 0px 1px;
+    }
+  }
+
+}
+
+/*endregion*/
+
+
+/*region User Applet */
+.user-icon {
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.user-label {
+  //color: $fg_color;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0px;
+}
+
+/*endregion*/
+
+
+/*region Desklets (desklet.js) */
+//
+.desklet {
+  color: $osd_fg_color;
+
+  &:highlight {
+    background-color: transparentize($error_color, 0.5);
+  }
+
+  &-with-borders {
+    border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+    color: $osd_fg_color;
+    padding: 12px;
+    padding-bottom: 16px;
+
+    &:highlight {
+      background-color: transparentize($error_color, 0.5);
+    }
+  }
+
+  &-with-borders-and-header {
+    border-image: url("common-assets/misc/desklet.svg") 9 9 9 9;
+    color: $osd_fg_color;
+    border-radius: 0;
+    border-radius-topleft: 0;
+    border-radius-topright: 0;
+    padding: 12px;
+    padding-bottom: 17px;
+
+    &:highlight {
+      background-color: transparentize($error_color, 0.5);
+    }
+  }
+
+  &-header {
+    border-image: url("common-assets/misc/desklet-header.svg") 9 9 9 9;
+    color: $osd_fg_color;
+    font-size: 1em;
+    padding: 12px;
+    padding-bottom: 6px;
+  }
+
+  &-drag-placeholder {
+    border: 2px solid $selected_bg_color;
+    background-color: transparentize($selected_bg_color, 0.7);
+  }
+}
+
+.photoframe-box {
+  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+  color: $osd_fg_color;
+  padding: 12px;
+  padding-bottom: 16px;
+}
+
+/*endregion*/
+
+
+/*region Workspace OSD */
+//
+/*FIXME*/
+.workspace-osd {
+  /*color: red;*/
+  text-shadow: black 5px 5px 5px;
+  font-weight: bold;
+  font-size: 48pt;
+}
+
+/*endregion*/
+
+
+/*region Notification Applet */
+.notification-applet-padding {
+  padding: .5em 1em;
+}
+
+.notification-applet-container {
+  max-height: 100px;
+}
+
+/*endregion*/
+
+
+/*region Tile Preview */
+
+.tile-preview, .tile-preview.snap,
+.tile-hud, .tile-hud.snap {
+  background-color: transparentize($selected_bg_color, 0.7);
+  border: 1px solid $selected_bg_color;
+}
+
+/*endregion*/
+
+
+/*region Xkcd Desklet */
+//
+.xkcd-box {
+  padding: 6px;
+  border: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0px;
+}
+
+/*endregion*/

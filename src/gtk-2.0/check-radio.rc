@@ -1,0 +1,189 @@
+style "check-radio"
+{
+    bg[NORMAL]      = shade (1.00, @q_bg_color)
+    bg[PRELIGHT]    = shade (1.10, @q_bg_color)
+    bg[ACTIVE]      = shade (0.85, @q_bg_color)
+    bg[SELECTED]    = @q_base_color
+    # bg[INSENSITIVE] = shade (0.95, @q_bg_color)
+
+    fg[NORMAL]          = @q_fg_color                 # Metacity and mouseover, Most text
+    fg[PRELIGHT]        = shade (1.10, @q_fg_color)   # Text when mouseover
+    fg[ACTIVE]          = shade (1.00, @q_fg_color)   # Text when mouseclicking button, Tabs, Active window list
+    fg[SELECTED]        = shade (1.10, @q_fg_color)   # Metacity X when window selected
+    # fg[INSENSITIVE]     = shade (0.60, @q_bg_color)   # Insensitive Text
+    fg[INSENSITIVE]     = mix (0.3, @q_fg_color, @q_bg_color)   # Insensitive Text
+    
+    text[NORMAL]        = @q_fg_color                 # Text in window
+    text[PRELIGHT]      = shade (1.10, @q_fg_color)   # Text on Mouseover
+    text[ACTIVE]        = shade (1.00, @q_fg_color)   # Active text in inactive window
+    text[SELECTED]      = shade (1.10, @q_fg_color)   # Active text in active window
+    text[INSENSITIVE]   = shade (1.00, @q_bg_color)   # Insensitive text
+
+    engine "pixmap" {
+
+
+        # Check Buttons
+
+        image {
+            function        = CHECK
+            recolorable     = TRUE
+            state           = NORMAL
+            shadow          = OUT
+            overlay_file    = "assets/checkbox-unchecked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = CHECK
+            recolorable     = TRUE
+            state           = PRELIGHT
+            shadow          = OUT
+            overlay_file    = "assets/checkbox-unchecked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = CHECK
+            recolorable     = TRUE
+            state           = ACTIVE
+            shadow          = OUT
+            overlay_file    = "assets/checkbox-unchecked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = CHECK
+            recolorable     = TRUE
+            state           = SELECTED
+            shadow          = OUT
+            overlay_file    = "assets/checkbox-unchecked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = CHECK
+            recolorable     = TRUE
+            state           = INSENSITIVE
+            shadow          = OUT
+            overlay_file    = "assets/checkbox-unchecked-insensitive.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = CHECK
+            recolorable     = TRUE
+            state           = NORMAL
+            shadow          = IN
+            overlay_file    = "assets/checkbox-checked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = CHECK
+            recolorable     = TRUE
+            state           = PRELIGHT
+            shadow          = IN
+            overlay_file    = "assets/checkbox-checked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = CHECK
+            recolorable     = TRUE
+            state           = ACTIVE
+            shadow          = IN
+            overlay_file    = "assets/checkbox-checked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = CHECK
+            recolorable     = TRUE
+            state           = SELECTED
+            shadow          = IN
+            overlay_file    = "assets/checkbox-checked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = CHECK
+            recolorable     = TRUE
+            state           = INSENSITIVE
+            shadow          = IN
+            overlay_file    = "assets/checkbox-checked-insensitive.png"
+            overlay_stretch = FALSE
+        }
+
+        # Radio Buttons
+
+        image {
+            function        = OPTION
+            state           = NORMAL
+            shadow          = OUT
+            overlay_file    = "assets/radio-unchecked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = OPTION
+            state           = PRELIGHT
+            shadow          = OUT
+            overlay_file    = "assets/radio-unchecked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = OPTION
+            state           = ACTIVE
+            shadow          = OUT
+            overlay_file    = "assets/radio-unchecked.png"
+            overlay_stretch = FALSE
+        }
+        image  {
+            function        = OPTION
+            state           = SELECTED
+            shadow          = OUT
+            overlay_file    = "assets/radio-unchecked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = OPTION
+            state           = INSENSITIVE
+            shadow          = OUT
+            overlay_file    = "assets/radio-unchecked-insensitive.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = OPTION
+            state           = NORMAL
+            shadow          = IN
+            overlay_file    = "assets/radio-checked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = OPTION
+            state           = PRELIGHT
+            shadow          = IN
+            overlay_file    = "assets/radio-checked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = OPTION
+            state           = ACTIVE
+            shadow          = IN
+            overlay_file    = "assets/radio-checked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = OPTION
+            state           = SELECTED
+            shadow          = IN
+            overlay_file    = "assets/radio-checked.png"
+            overlay_stretch = FALSE
+        }
+        image {
+            function        = OPTION
+            state           = INSENSITIVE
+            shadow          = IN
+            overlay_file    = "assets/radio-checked-insensitive.png"
+            overlay_stretch = FALSE
+        }
+    }
+}
+
+
+widget_class "*GtkCheck*" style "check-radio"
+widget_class "*GtkRadio*" style "check-radio"
+
+#widget_class "*.<GtkTreeView>*GtkCheck*" style:highest "check-radio"
+#widget_class "*.<GtkTreeView>*GtkRadio*" style:highest "check-radio"
+

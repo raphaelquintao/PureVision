@@ -1,0 +1,35 @@
+// Default Window
+%def_panel_border {
+  $hl_border_color: transparentize(shade(opacify($panel_bg, 1), 1.8), 0.90);
+  background-color: $panel_bg;
+  border: 0;
+  border: 1px solid $hl_border_color;
+  border-radius: 2px;
+  //box-shadow: inset 0px 1px 1px 1px lighten($panel_bg, 90%),
+  //0 1px 0 rgba(255, 255, 255, 0.07);
+  //box-shadow: inset 0px 1px 1px 1px lighten($panel_bg, 90%);
+  box-shadow: 0 1px 6px 0px rgba(0, 0, 0, 0.98);
+}
+
+%def_sub_panel {
+  $hl_border_color: transparentize(lighten($panel_bg, 85%), 0.90);
+  //background-color: darken($panel_bg, 8%);
+
+  //border-bottom: 1px solid $hl_border_color;
+  //border-bottom: 1px solid darken($panel_bg, 20%);
+
+  //box-shadow: inset 0px 0px 0px 1px blue;
+  //box-shadow: 0px 0px 0px 1px blue;
+
+}
+
+
+@mixin osd_win($shadow:false) {
+  //color: $osd_fg_color;
+  background-color: $osd_bg_color;
+  border: 1px solid $osd_border_color;
+  border-radius: 2px;
+  @if $shadow==true {
+    box-shadow: 0 1px 6px 0px rgba(0, 0, 0, 0.99);
+  }
+}

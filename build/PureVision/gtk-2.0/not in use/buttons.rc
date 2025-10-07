@@ -1,0 +1,51 @@
+style "button"
+{
+    xthickness = 3
+    ythickness = 3
+
+    bg[NORMAL]     = shade (0.9, @q_base_color) 
+    bg[ACTIVE]     = shade (0.5, @q_base_color)
+    bg[PRELIGHT]   = shade (0.95, @q_base_color)
+    bg[SELECTED]   = shade (0.6, @q_base_color)
+
+    fg[NORMAL]        = @q_fg_color
+    fg[PRELIGHT]      = shade (1.1, @q_fg_color)
+    fg[SELECTED]      = shade (1.1, @q_fg_color)
+    fg[ACTIVE]        = shade (1.1, @q_fg_color)
+    fg[INSENSITIVE]   = shade (0.90, @q_fg_color)
+
+    text[NORMAL]        = @q_fg_color
+    text[PRELIGHT]      = shade (1.0, @q_fg_color)
+    text[SELECTED]      = shade (1.0, @q_fg_color)
+    text[ACTIVE]        = shade (1.0, @q_fg_color)
+    text[INSENSITIVE]   = mix (0.4, @fg_color, @q_color)
+
+    engine "murrine"
+    {
+        border_shades = { 0.1, 0.1 }
+        roundness = 2 # Roundness of menu items.
+    }
+}
+
+style "treeview-header"
+{
+    xthickness = 2
+    ythickness = 1
+
+    bg[SELECTED]      = shade (0.8, @base_color)
+    bg[NORMAL]        = shade (0.9, @base_color)
+    bg[PRELIGHT]      = @selected_bg_color
+    bg[ACTIVE]        = @base_color
+    bg[INSENSITIVE]   = @base_color
+
+    engine "murrine"
+    {
+        border_shades = { 1.0, 1.0 }
+        roundness = 0 # Roundness of menu items.
+    }
+    
+}
+
+widget_class "*<GtkButton>"                style "button"
+widget_class "*<GtkTreeView>*<GtkButton>*" style:highest "treeview-header"
+

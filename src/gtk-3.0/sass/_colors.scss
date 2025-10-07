@@ -1,0 +1,171 @@
+@function gtkopacity($c, $a) {
+  @return scale-color($c, $alpha: percentage(-1 + $a));
+}
+
+@function shade($c, $p:1) {
+  @return scale-color($c, $lightness: min(($p - 1) * 100%, 100) );
+}
+
+
+
+//$q_bg_color: #2B3136;
+//$q_base_color: #434F5B;
+//$q_fg_color: #B2B9BF;
+
+
+// Base Colours
+
+$q_base_color: hsl(220, 13%, 27%);
+$q_base_color: hsl(220, 13%, 20%);
+//$q_base_color: hsl(232, 15%, 20%);
+//$q_base_color: hsl(221, 16%, 20%);
+//$q_base_color: hsl(285, 32%, 25%);
+//$q_base_color: hsl(320, 70%, 20%);
+
+$q_fg_color: hsl(208, 9%, 67%);
+$q_fg_color: hsl(220, 2%, 73%); //#b9babc
+
+
+
+
+$base_color: shade($q_base_color, 0.7);
+$text_color: shade($q_fg_color, 0.80) ;
+$bg_color: shade($q_base_color, 1);
+$fg_color: $q_fg_color;
+//$text_color: red ;
+
+
+
+$highlight_color: #804261;
+//$highlight_color: darken($fg_color, 20%);
+
+
+$selected_fg_color: $fg_color;
+$selected_bg_color: transparentize($fg_color, 0.85);
+$hover_bg_color: transparentize($fg_color, 0.90);
+
+
+$borders_color: shade($bg_color, 0.2);
+$selected_borders_color: $borders_color;
+//$borders_color: red;
+
+
+
+
+$link_color: $fg_color;
+$link_visited_color: darken($link_color, 10%);
+
+
+$inner_headers: shade($base_color, 0.65);
+//$inner_headers: red;
+
+$selection_mode_bg: transparentize($selected_bg_color, 0.05);
+$selection_mode_bg: $highlight_color;
+$selection_mode_fg: $selected_fg_color;
+
+
+
+$warning_color: #F27835;
+$error_color: #FC4138;
+$warning_fg_color: white;
+$error_fg_color: white;
+$success_color: #73d216;
+$destructive_color: #F04A50;
+$suggested_color: #994d79;
+$destructive_fg_color: white;
+$suggested_fg_color: white;
+$drop_target_color: #F08437;
+
+
+//insensitive state derived colors
+$insensitive_fg_color: transparentize($fg_color, 0.55);
+$insensitive_bg_color: lighten($bg_color, 2%);
+
+
+
+
+//region -- Default Buttons
+$button_bg: shade($bg_color, 1.1);
+$button_border: shade($bg_color, 0.2);
+
+$entry_bg: darken($base_color, 1%);
+$entry_border: $button_border;
+
+//endregion
+
+
+
+//region -- Header
+$header_bg: shade($bg_color, 0.85);
+$header_bg_backdrop: $header_bg;
+$header_fg: $fg_color;
+$header_border: shade($header_bg, 0.3);
+
+$header_entry_bg: transparentize(darken($header_bg, 8%), 0.05);
+$header_entry_border: transparentize(lighten($header_bg, 5%), 0.02);
+
+$header_button_bg: shade($header_bg, 1.1);
+$header_button_border: shade($header_bg, 0.2);
+//endregion
+
+
+
+//region Dark Sidebar
+$dark_sidebar_bg: shade($base_color, 1);
+//$dark_sidebar_bg: $bg_color;
+$dark_sidebar_fg: $fg_color;
+$dark_sidebar_border: shade($dark_sidebar_bg, 0.2);
+//$dark_sidebar_border: hotpink;
+//endregion
+
+
+//region OSD
+$osd_fg_color: $fg_color;
+$osd_bg_color: transparentize(shade($bg_color, 0.8), 0.10);
+$osd_border_color: shade($osd_bg_color, 0.1);
+
+$osd_button_bg: shade($osd_bg_color, 1.1);
+$osd_button_border: shade($osd_bg_color, 0.2);
+
+$osd_entry_bg: transparentize(lighten($osd_bg_color, 18%), 0);
+$osd_entry_border: transparentize(darken($osd_bg_color, 12%), 0);
+
+$osd_insensitive_fg_color: transparentize($osd_fg_color, 0.55);
+//$osd_insensitive_bg_color: transparentize($osd_bg_color, 0.9);
+//transparentize($button_bg, 0.45);transparentize($fg_color, 0.55)
+//endregion
+
+
+
+
+//region Panel/Cinnamon
+$panel_bg: $dark_sidebar_bg;
+$panel_fg: shade($dark_sidebar_fg, 0.8);
+$panel_border: darken($panel_bg, 0.85);
+//$panel_fg: red;
+
+//endregion
+
+
+
+
+//region WM Buttons
+
+// Close
+$wm_button_close_bg: #cc5888;
+$wm_button_close_hover_bg: #d6789f;
+$wm_button_close_active_bg: #bd3970;
+
+$wm_icon_close_bg: #2f343f;
+
+// Minimize, Maximize
+$wm_button_hover_bg: #454C5C;
+$wm_button_active_bg: $selected_bg_color;
+
+$wm_button_hover_border: #262932;
+
+$wm_icon_bg: #90939B;
+$wm_icon_unfocused_bg: #666A74;
+$wm_icon_hover_bg: #C4C7CC;
+$wm_icon_active_bg: $selected_fg_color;
+//endregion
