@@ -21,4 +21,4 @@ I tried every other theme, but nothing else felt right. So here we are.
 
 ## Build and Install
 `make all` 
-'cp /build/PureVision* ~/.themes/'
+`cp -r build/PureVision* ~/.themes/`
