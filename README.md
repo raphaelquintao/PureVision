@@ -20,5 +20,9 @@ I tried every other theme, but nothing else felt right. So here we are.
 - Probably others stuffs, because nothing is ever simple...
 
 ## Build and Install
-`make all` 
-`cp -r build/PureVision* ~/.themes/`
+- `make all` 
+- `cp -r build/PureVision* ~/.themes/`
+
+
+## Screenshots
+<img width="1289" height="748" alt="image" src="https://github.com/user-attachments/assets/27a9e465-eb9d-4fbd-8404-b96943eaadf3" />
