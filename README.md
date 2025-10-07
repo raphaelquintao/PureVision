@@ -1,6 +1,6 @@
 # PureVision GTK Theme
 
-My personal GTK theme inspired by the legendary Arc theme. (But with less drama)
+My personal GTK theme based on the legendary Arc theme. (But with less drama)
 
 Ps.: This code is so old, it probably remembers dial-up. I really should update it sometime...
 
